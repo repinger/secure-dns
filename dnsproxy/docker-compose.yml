@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  dnsproxy:
+    image: chenhw2/dnsproxy:latest
+    container_name: dnsproxy
+    ports:
+      - 127.0.0.1:53:53/tcp
+      - 127.0.0.1:53:53/udp
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      # DoQ
+      - ARGS=--cache --cache-optimistic --all-servers --cache-size=256000 --cache-max-ttl=28800 --tls-min-version=1.3 --bootstrap=tls://1.1.1.1 -u=quic://dns.repinger.my.id
+      # DoH
+      # - ARGS=--cache --cache-optimistic --all-servers --cache-size=256000 --cache-max-ttl=28800 --tls-min-version=1.3 --bootstrap=tls://1.1.1.1 -u=https://dns.repinger.my.id/dns-query
+      # DoT
+      # - ARGS=--cache --cache-optimistic --all-servers --cache-size=256000 --cache-max-ttl=28800 --tls-min-version=1.3 --bootstrap=tls://1.1.1.1 -u=tls://dns.repinger.my.id
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    restart: always
