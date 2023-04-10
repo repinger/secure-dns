@@ -29,8 +29,7 @@
 ##
 ## Remove the leading # first to enable this; lines starting with # are ignored.
 
-# server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare']
-
+server_names = ['secure-doh', 'secure-doh-ipv6']
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
 ## Example with both IPv4 and IPv6:
@@ -880,6 +879,10 @@ skip_incompatible = false
 ## Mostly useful for testing your own servers.
 
 [static]
+	[static.secure-doh]
+		stamp = 'sdns://AgIAAAAAAAAADzIwMy4xOTQuMTEyLjIyOCBETr1nu4P4gHs5Iek4rJF4uIK9UKrbESMfBEz18I33zhJkbnMucmVwaW5nZXIubXkuaWQKL2Rucy1xdWVyeQ'
+	[static.secure-doh-ipv6]
+		stamp = 'sdns://AgIAAAAAAAAAE1syMDAxOmRmMDoyN2I6OjI0MF0gRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984SZG5zLnJlcGluZ2VyLm15LmlkCi9kbnMtcXVlcnk'
 
   # [static.myserver]
   #   stamp = 'sdns://AQcAAAAAAAAAAAAQMi5kbnNjcnlwdC1jZXJ0Lg'
