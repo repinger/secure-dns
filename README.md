@@ -1,6 +1,6 @@
 # Private, encrypted, and secure DNS
 
-Yet another ad/tracker/malware-blocking [no-logs free public DNS](https://dns.repinger.my.id).
+Yet another ad/tracker/malware-blocking [no-logs free public DNS](https://dns.repinger.my.id)
 
 
 ## DNS over TLS (DoT)
@@ -56,3 +56,7 @@ sdns://BAIAAAAAAAAAEzIwMy4xOTQuMTEyLjIyODo4NTMgRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjH
 ```
 sdns://BAIAAAAAAAAAF1syMDAxOmRmMDoyN2I6OjI0MF06ODUzIEROvWe7g_iAezkh6TiskXi4gr1QqtsRIx8ETPXwjffOEmRucy5yZXBpbmdlci5teS5pZA
 ```
+
+## Why no plain DNS?
+
+Largely due to [transparent DNS proxies](https://dnsleaktest.com/what-is-transparent-dns-proxy.html) in which sending unencrypted queries to a third-party DNS service defeats the purpose of secure DNS.
