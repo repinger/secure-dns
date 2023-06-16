@@ -1,6 +1,6 @@
 # Private, encrypted, and secure DNS
 
-Yet another ad/tracker/malware-blocking [no-logs free public DNS](https://dns.repinger.my.id)
+Yet another ad/tracker/malware-blocking (over one million domains blocked), no-logs, and free public DNS.
 
 
 ## DNS over TLS (DoT)
@@ -13,12 +13,12 @@ tls://dns.repinger.my.id / dns.repinger.my.id
 
 ### IPv4 stamp
 ```
-sdns://AwMAAAAAAAAADzIwMy4xOTQuMTEyLjIyOCBETr1nu4P4gHs5Iek4rJF4uIK9UKrbESMfBEz18I33zhJkbnMucmVwaW5nZXIubXkuaWQ
+sdns://AwMAAAAAAAAADjQ1LjE0OS4xODcuMTY3IGpQYrDReNVW8WOxOxsPGUNdAliCkcx1WJ3-5usRyNXDEmRucy5yZXBpbmdlci5teS5pZA
 ```
 
 ### IPv6 stamp
 ```
-sdns://AwMAAAAAAAAAE1syMDAxOmRmMDoyN2I6OjI0MF0gRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984SZG5zLnJlcGluZ2VyLm15Lmlk
+sdns://AwMAAAAAAAAAHVsyNDA3OjZhYzA6MjoyOjE6MTo0N2Y2OjE2YmRdIGpQYrDReNVW8WOxOxsPGUNdAliCkcx1WJ3-5usRyNXDEmRucy5yZXBpbmdlci5teS5pZA
 ```
 
 ## DNS over HTTPS (DoH)
@@ -31,12 +31,12 @@ https://dns.repinger.my.id/dns-query
 
 ### IPv4 stamp
 ```
-sdns://AgMAAAAAAAAADzIwMy4xOTQuMTEyLjIyOCBETr1nu4P4gHs5Iek4rJF4uIK9UKrbESMfBEz18I33zhJkbnMucmVwaW5nZXIubXkuaWQKL2Rucy1xdWVyeQ
+sdns://AgMAAAAAAAAADjQ1LjE0OS4xODcuMTY3IGpQYrDReNVW8WOxOxsPGUNdAliCkcx1WJ3-5usRyNXDEmRucy5yZXBpbmdlci5teS5pZAovZG5zLXF1ZXJ5
 ```
 
 ### IPv6 stamp
 ```
-sdns://AgMAAAAAAAAAE1syMDAxOmRmMDoyN2I6OjI0MF0gRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984SZG5zLnJlcGluZ2VyLm15LmlkCi9kbnMtcXVlcnk
+sdns://AgMAAAAAAAAAHVsyNDA3OjZhYzA6MjoyOjE6MTo0N2Y2OjE2YmRdIGpQYrDReNVW8WOxOxsPGUNdAliCkcx1WJ3-5usRyNXDEmRucy5yZXBpbmdlci5teS5pZAovZG5zLXF1ZXJ5
 ```
 
 ## DNS over QUIC (DoQ)
@@ -49,14 +49,16 @@ quic://dns.repinger.my.id
 
 ### IPv4 stamp
 ```
-sdns://BAMAAAAAAAAAEzIwMy4xOTQuMTEyLjIyODo4NTMgRE69Z7uD-IB7OSHpOKyReLiCvVCq2xEjHwRM9fCN984SZG5zLnJlcGluZ2VyLm15Lmlk
+sdns://BAMAAAAAAAAADjQ1LjE0OS4xODcuMTY3IGpQYrDReNVW8WOxOxsPGUNdAliCkcx1WJ3-5usRyNXDEmRucy5yZXBpbmdlci5teS5pZA
 ```
 
 ### IPv6 stamp
 ```
-sdns://BAMAAAAAAAAAF1syMDAxOmRmMDoyN2I6OjI0MF06ODUzIEROvWe7g_iAezkh6TiskXi4gr1QqtsRIx8ETPXwjffOEmRucy5yZXBpbmdlci5teS5pZA
+sdns://BAMAAAAAAAAAHVsyNDA3OjZhYzA6MjoyOjE6MTo0N2Y2OjE2YmRdIGpQYrDReNVW8WOxOxsPGUNdAliCkcx1WJ3-5usRyNXDEmRucy5yZXBpbmdlci5teS5pZA
 ```
 
-## Why no plain DNS?
+## Why no *plain* DNS?
 
-Largely due to [transparent DNS proxies](https://dnsleaktest.com/what-is-transparent-dns-proxy.html) in which sending unencrypted queries to a third-party DNS service defeats the purpose of secure DNS.
+Mainly due to [transparent DNS proxies](https://dnsleaktest.com/what-is-transparent-dns-proxy.html); a simple trick that will workaround the issue is to change the serving-port other than 53/{tcp,udp}.
+
+Even with the aforementioned workaround, incoming and outcoming DNS queries are **still unencrypted** and anyone with the ability can snoop right in effortlessly. Sending unencrypted queries to a third-party DNS service defeats the whole purpose of secure DNS.
